@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.css';
-import Child from './components/Child';
+import {Child, Child2, Child3,Child4}from './components/Child';
 
 const App: React.FC = () => {
   type Item ={
@@ -19,8 +19,11 @@ const App: React.FC = () => {
     },
   ]
 
+  
+
   const message: string='React'
   return (
+    <>
     <div className="App">
       <p>Hello</p>
       <p>{message}</p>
@@ -29,8 +32,12 @@ const App: React.FC = () => {
           <li key={item.id}>{item.title}</li>
           ))}
       </ul>
-      <Child />
+      <Child number="1">子コンポーネントを渡す</Child>
+      <Child2 />
+      <Child3 message="子コンポーネントを渡す3"/>
+      <Child4>子コンポーネントを渡す4</Child4>
     </div>
+    </>
       );
 }
 
